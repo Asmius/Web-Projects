@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" content="width=device-width,initial-scale=1">
+    <title>Forms Page</title>
+    <link rel="stylesheet" href="css/forms.css">
+    <script src="https://kit.fontawesome.com/fdc2bb3f29.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="name">
+            <img src="images/StuSkills.png" alt="" width="20%" >
+        </div>
+        <div class="search-box">
+            <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <input type="text" placeholder="search-box" />
+        </div>
+        <div class="Head-names">
+            <a href="/home">Home</a>
+            <a href="/forms">Projects</a>
+        </div>
+        <div class="login-icon">
+            <a href="/profile" style="text-decoration: none;"><img src="images/profile.png" alt="" width="5rem"></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-heading">Upload your Project</div>
+        <form action="/forms" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="idea-name" style="vertical-align: middle;margin:auto 0">Idea Name <span style="color: grey;font-weight: 100;font-size: .75rem;">
+                    <a href="/verification" class="val-link" style="vertical-align: middle;margin:auto 0">&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16" style="vertical-align: middle;margin:auto 0">
+                        <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0"/>
+                        <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                      </svg></a></span></label>
+                
+                <input type="text" id="idea-name" name="title" required>
+               
+            </div>
+            <div class="form-group">
+                <label for="idea-description">Idea Description <span style="color: grey;font-weight: 100;font-size: .75rem;">(required)</span></label>
+                <textarea id="idea-description" name="content" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="who-can-view">Who can view this idea?<span style="color: grey;font-weight: 100;font-size: .75rem;">(required)</span></label>
+                <select id="who-can-view" name="who-can-view">
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="idea-tags">Idea Tags</label>
+                <select id="idea-tags" name="idea-tags">
+                    <option value="select">--select--</option>
+                    <option value="ML">ML</option>
+                    <option value="Cloud Computing">Cloud Computing</option>
+                    <option value="DevOps">DevOps</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="team-members">Author<span style="color: grey;font-weight: 100; font-size: .75rem;">(required)</span></label>
+                <input type="text" id="team-members" name="author" required>
+            </div>
+            <div class="form-group">
+                <label for="project-license">Project Image for Blog<span style="color: grey;font-weight: 100;font-size: .75rem;">(required)</span></label>
+                <input type="file" id="project-license" name="image" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="project-license">College/University<span style="color: grey;font-weight: 100;font-size: .75rem;">(required)</span></label>
+                <input type="text" id="college" name="college">
+            </div>
+            <div class="form-group">
+                <label for="intellectual-property">Intellectual Property<span style="color: grey;font-weight: 100;font-size: .75rem;">(required)</span></label>
+                <select id="intellectual-property" name="intellectual-property">
+                    <option value="patented">Patented</option>
+                    <option value="public">Public</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="project-files">Project Files</label>
+                <input type="file" id="project-files" name="project-files" >
+            </div>
+            <div class="form-group">
+                <label for="project-document">Project Document</label>
+                <input type="file" id="project-document" name="project-document">
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+           
+        </form>
+        
+    </div>
+    
+</body>
+</html>

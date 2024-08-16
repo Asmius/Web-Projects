@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Profile Page</title>
+    <meta charset="utf-8" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/profile.css">
+    <script src="https://kit.fontawesome.com/fdc2bb3f29.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="name">
+            <img src="images/StuSkills.png" alt="" width="20%" >
+        </div>
+        <div class="search-box">
+            <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <input type="text" placeholder="search-box" />
+        </div>
+        <div class="Head-names">
+            <a href="/home">Home</a>
+            <a href="/forms">Projects</a>
+        </div>
+        <div class="login-icon">
+            <a href="/profile" style="text-decoration: none;"><img src="images/profile.png" alt="" width="5rem"></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="profile-details">
+            <div class="profile-picture">
+                <img src="images/pfp3.png" alt="Profile Picture">
+            </div>
+
+            <div class="edit-profile">
+                <button>Edit Profile</button>
+            </div>
+
+            <div class="follow-details">
+                <div class="followers">Followers: 500</div>
+                <div class="following">Following: 300</div>
+            </div>
+
+            <div class="edit-profile">
+                <input type="text" id="profile-name" name="profile-name" placeholder="Your Profile Name">
+            </div>
+
+            <div class="profile-info">
+                <textarea id="profile-description" name="profile-description" rows="4" placeholder="Description"></textarea>
+            </div>
+
+            <div class="account-type" style="padding:1rem 1rem 1rem 0;">
+                <p style="font-size: 1.2rem; font-weight: bold;margin-bottom: 1rem;">Account Type:</p>
+                <label style="margin-left:1rem;">
+                    <input type="radio" name="account-type" value="public">
+                    Public
+                </label>
+                <label style="margin-left:1rem;">
+                    <input type="radio" name="account-type" value="private">
+                    Private
+                </label>
+            </div>
+        </div>
+
+        <div class="projects-history">
+            <span style="font-size: 1.5rem; font-weight: bold; color:#3498db; padding: 1rem  0 2rem 0;">Your Projects:</span>
+            <div class="feed">
+                <div class="feed-item">
+                    <div class="profile" style="margin-top: 1rem;">
+                        <div>
+                            <h2>Smart City Traffic Management <span class="patented-text">Patented</span></h2>
+                        </div>
+                    </div>
+                    <div class="feed-content">
+                        <p>The "AI-Powered Smart City Traffic Management System" is an innovative endeavor poised to transform urban transportation and elevate city residents' quality of life. Urban areas worldwide grapple with mounting traffic congestion, resulting in increased pollution, longer commutes, and reduced well-being.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="profile">
+                    <div>
+                        <h2>Predictive Maintenance<span class="patented-text">Patented</span></h2>
+                    </div>
+                </div>
+                <div class="feed-content">
+                    <p>
+                        Predictive Maintenance for Industrial Machinery is a game-changing solution that revolutionizes industrial operations through cloud-based predictive maintenance. This cutting-edge system harnesses the power of machine learning to meticulously analyze real-time data from industrial machinery, enabling it to forecast potential failures and proactively schedule maintenance.
+                    </p>
+                </div>
+            </div>
+
+            <div class="profile">
+                <div>
+                    <h2>Personalized E-Learning<span class="preview-text">Preview</span></h2>
+                </div>
+            </div>
+            <div class="feed-content">
+                <p>
+                    The "Personalized E-Learning and Student Progress Tracker" project represents a remarkable fusion of AI and cloud computing, aiming to revolutionize e-learning by providing highly personalized educational experiences. This innovative system meticulously monitors individual student progress and uses AI algorithms to adapt and tailor the educational content to each student's unique needs and learning pace.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

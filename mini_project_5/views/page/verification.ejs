@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Page</title>
+    <!-- String Similarity Package -->
+    <script src="https://cdn.jsdelivr.net/npm/string-similarity/umd/string-similarity.min.js"></script>
+    <link rel="stylesheet" href="/css/verification.css">
+</head>
+<body>
+    
+    <div class="container">
+    <div class="toast-overlay" id="toast-overlay"></div> 
+
+        <div class="text-container">
+            <h1 >Explore Patent Potential!!</h1>
+            <p>Curious to know if your idea is truly innovative? Enter the details below for a quick check!</p>
+            
+            <input type="text" class="input-tech" placeholder="Technologies/Methodologies used" name="patent-name">
+            <label>
+                <input type="text" class="input-verify" placeholder="Enter your proposed idea title" name="patent-name">
+                <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-arrow-up-right-circle-fill" viewBox="0 0 16 16" onclick="ProjectValidator()" >
+                    <path d="M0 8a8 8 0 1 0 16 0A8 8 0 0 0 0 8m5.904 2.803a.5.5 0 1 1-.707-.707L9.293 6H6.525a.5.5 0 1 1 0-1H10.5a.5.5 0 0 1 .5.5v3.975a.5.5 0 0 1-1 0V6.707z"/>
+                  </svg>
+                
+            </label>
+           
+        </div>
+        <img src="/images/verification_image.jpg" alt="" height="50%" width="50%">
+    </div>
+    <script>
+          function ProjectValidator() {
+        const data = JSON.parse(localStorage.getItem('projectData')) || [];
+        const inputTitle = document.getElementsByClassName("input-verify")[0].value;
+        const inputTech = document.getElementsByClassName("input-tech")[0].value;
+
+        // Function to tokenize and normalize a tech stack string
+        function tokenizeAndNormalize(techStack) {
+            return techStack.toLowerCase().split(/[ .{},;/@#!$%^&*()_=+-]+/).filter(Boolean);
+        }
+
+        // Function to check similarity with a custom tech stack comparison
+        function isSimilar(existingValue, inputTitle, inputTech) {
+            // Tokenize and normalize tech stacks
+            const existingTechTokens = tokenizeAndNormalize(existingValue.tech);
+            const inputTechTokens = tokenizeAndNormalize(inputTech);
+
+            // Calculate Jaccard similarity between sets of tech stack tokens
+            const intersection = new Set([...existingTechTokens].filter(x => inputTechTokens.includes(x)));
+            const union = new Set([...existingTechTokens, ...inputTechTokens]);
+            const techSimilarity = intersection.size / union.size;
+
+            // You can adjust the similarity thresholds based on your requirements
+            return techSimilarity > 0.5;
+        }
+
+        if (data.some(existingValue => isSimilar(existingValue, inputTitle, inputTech))) {
+            showToast("Project already exists", "danger");
+        } else {
+            const newProject = {
+                title: inputTitle,
+                tech: inputTech,
+                // Add other project-related information as needed
+            };
+
+            data.push(newProject);
+            localStorage.setItem('projectData', JSON.stringify(data));
+            showToast("Project added successfully", "success", 5000, "/forms");
+            console.log(data);
+        }
+    }
+
+    window.onload = function () {
+        document.getElementsByClassName("input-verify")[0].value = "";
+        document.getElementsByClassName("input-tech")[0].value = "";
+    }
+
+    let icon = {
+        success: '<span class="material-symbols-outlined" style="font-size:1.2rem;">Success: </span>',
+        danger: '<span class="material-symbols-outlined">Error: </span>',
+    };
+
+    const showToast = (message = "Sample Message", toastType = "info", duration = 4000,redirectURL =null) => {
+        if (!Object.keys(icon).includes(toastType))
+            toastType = "info";
+        let box = document.createElement("div");
+        box.classList.add("toast", `toast-${toastType}`);
+        box.innerHTML = ` <div class="toast-content-wrapper">
+                      <div class="toast-icon">
+                      ${icon[toastType]}
+                      </div>
+                      <div class="toast-message">${message}</div>
+                      <div class="toast-progress"></div>
+                      </div>`;
+        duration = duration || 5000;
+        box.querySelector(".toast-progress").style.animationDuration =
+            `${duration / 1000}s`;
+
+        let toastAlready =
+            document.body.querySelector(".toast");
+        if (toastAlready) {
+            toastAlready.remove();
+        }
+
+        document.body.appendChild(box)
+
+        if (redirectURL && toastType === "success") {
+            setTimeout(() => {
+                window.location.href = redirectURL;
+            }, duration);
+        }
+    };
+    </script>
+</body>
+</html>
+

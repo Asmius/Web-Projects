@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,900&family=Montserrat:wght@900&family=PT+Serif:ital,wght@1,700&family=Public+Sans:wght@500;600&family=Space+Grotesk&display=swap');
+        body {
+            font-family:"DM Sans";
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+        .name > img{
+            margin-left: 2rem;
+        }
+        .login-icon {
+            width: 3rem;
+            margin-right: 2rem;
+        }
+        .login-icon img {
+            width: 100%;
+            height: auto;
+        }
+    
+        .search-box input{
+            border: none;
+            outline: none;
+        }
+        .header {
+            margin: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid grey;
+            padding-bottom: 10px;
+            clear: both;
+        }
+    
+        .Head-names a{
+            text-decoration: none;
+            color: black;
+            padding: 1rem;
+            font-weight: bold;
+        }
+    
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #fff; /* Add a background color */
+            border: 1px solid black; /* Add a border for the input field */
+            border-radius: 1.25rem;
+            padding: 5px;
+            width: 200px; 
+        }
+        
+        .search-icon {
+            margin-right: 1rem; 
+            color: #666; 
+        }
+           
+            .container {
+                width: 40%;
+                margin: 0 auto;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+                border-radius: 1.25rem;
+                margin-bottom: 2rem;
+            }
+            .form-heading {
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+        
+            form {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+            .form-group {
+                margin-bottom: 15px;
+            }
+            .form-group label {
+                font-weight: bold;
+                margin-bottom: 1rem;
+                padding-bottom: 1rem !important;
+            }
+            .form-group input,
+            .form-group select {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+                margin-top: .5rem;
+                margin-bottom: .2rem;
+            }
+            .form-group textarea {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+            .submit-button {
+                background-color:  #8B70F8;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 50px;
+                cursor: pointer;
+            }
+            .logo {
+                font-size: 28px;
+                font-weight: bold;
+                width: 150px; /* Adjust dimensions as needed */
+                height: 40px; /* Adjust dimensions as needed */
+            }
+            .search-bar {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+            .search-bar input[type="text"] {
+                width: 50%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+            .right-nav li {
+                margin-left: 15px;
+            }
+            .success-alert {
+                display: none;
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px;
+                border-radius: 5px;
+                align-items: center;
+            }
+            .tick-mark {
+                margin-right: 5px;
+            }
+
+.val-link{
+    text-decoration: none;
+    color:#8B70F8;
+    margin:1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
